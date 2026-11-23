@@ -4,6 +4,16 @@ All notable changes to Joran. The format follows [Keep a Changelog](https://keep
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-23
+
+### Added
+
+- Terminal: your own commands, written as text replies in your dictionary (`term.commands.<name>` in `content/i18n/<lang>.json`, HTML allowed). They answer in the page language, show in `help` and complete with Tab. See `docs/features.md`.
+
+### Fixed
+
+- Scripts cache: the version in `main.js?v=` now covers every script it loads (`terminal.js`, `search.js`…), so a changed module is no longer served from the browser cache. With `npm start` the version is recomputed on each rebuild.
+
 ## [1.0.0] - 2026-11-22
 
 First public release.
@@ -31,5 +41,6 @@ First public release.
 - Deployment examples for Apache, nginx, SSH/rsync, Netlify and Cloudflare Pages.
 - Documentation in `docs/`.
 
-[Unreleased]: https://github.com/rmcd0/joran/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/rmcd0/joran/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/rmcd0/joran/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/rmcd0/joran/releases/tag/v1.0.0

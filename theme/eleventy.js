@@ -207,7 +207,7 @@ export default async function joran(eleventyConfig) {
   eleventyConfig.addFilter("plainText", f.plainText);
   eleventyConfig.addFilter("json", (v) => JSON.stringify(v).replace(/</g, "\\u003c"));
   eleventyConfig.addFilter("host", f.host);
-  eleventyConfig.addFilter("asset", f.makeAssetFilter({ root: ROOT, fallback: (build.commit || build.date).replace(/\W/g, "").slice(0, 8) }));
+  eleventyConfig.addFilter("asset", f.makeAssetFilter({ root: ROOT, noCache: isDev, fallback: (build.commit || build.date).replace(/\W/g, "").slice(0, 8) }));
   // "/journal/" -> "/fr/journal/" on a French page, when that page exists
   eleventyConfig.addFilter("localeUrl", function (url, lang) {
     lang ||= uiLangOf(this.ctx);
