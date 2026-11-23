@@ -4,6 +4,13 @@ All notable changes to Joran. The format follows [Keep a Changelog](https://keep
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-11-23
+
+### Fixed
+
+- Headings now get an `id` (`##`, `###`, `####`), as `docs/writing.md` promised: the Eleventy plugin ignored the `.prose h2` selector. Existing ids are kept in view, so a heading never duplicates one, and an id that would start with a digit gets `h-` in front.
+- `npm run check:links` now also checks links to a heading on the same page (`#a-section`), not only on other pages.
+
 ## [1.1.0] - 2026-11-23
 
 ### Added
@@ -41,6 +48,7 @@ First public release.
 - Deployment examples for Apache, nginx, SSH/rsync, Netlify and Cloudflare Pages.
 - Documentation in `docs/`.
 
-[Unreleased]: https://github.com/rmcd0/joran/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/rmcd0/joran/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/rmcd0/joran/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/rmcd0/joran/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/rmcd0/joran/releases/tag/v1.0.0

@@ -74,7 +74,10 @@ export default async function joran(eleventyConfig) {
 
   /* ---- plugins ---- */
   eleventyConfig.addPlugin(HtmlBasePlugin); // PATH_PREFIX for every URL in the HTML. Add it only once: twice doubles the prefix.
-  eleventyConfig.addPlugin(IdAttributePlugin, { selector: ".prose h2, .prose h3, .prose h4" });
+  // The plugin only understands simple selectors (no ".prose h2"). "[id]" keeps existing ids in view, so a heading never gets a duplicate one.
+  // An id must begin with a letter: "2019 – 2021 · …" becomes "h-2019-2021-…".
+  const slug = eleventyConfig.getFilter("slugify");
+  eleventyConfig.addPlugin(IdAttributePlugin, { selector: "[id],h2,h3,h4", slugify: (s) => { const id = slug(s); return /^[a-z]/i.test(id) ? id : `h-${id}`; } });
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: [...new Set([...site.images.formats, "svg"])],
     svgShortCircuit: true,
