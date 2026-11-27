@@ -4,6 +4,12 @@ All notable changes to Joran. The format follows [Keep a Changelog](https://keep
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-11-27
+
+### Added
+
+- 404 page: the last line of the terminal-style box ("the wind took it somewhere else") is now a dictionary text, `notFound.code`, so you can write your own in `content/i18n/<lang>.json`, like the title and text of the page.
+
 ## [1.2.0] - 2026-11-26
 
 ### Changed
@@ -54,7 +60,8 @@ First public release.
 - Deployment examples for Apache, nginx, SSH/rsync, Netlify and Cloudflare Pages.
 - Documentation in `docs/`.
 
-[Unreleased]: https://github.com/rmcd0/joran/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/rmcd0/joran/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/rmcd0/joran/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/rmcd0/joran/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/rmcd0/joran/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/rmcd0/joran/compare/v1.0.0...v1.1.0
